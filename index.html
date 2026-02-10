@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل الحياة في الخارج — فراس و رهف</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--gold:#d4a44c;--gold-light:#f0d48a;--dark:#0a0a0f;--darker:#060609;
+--card:#12121a;--card-hover:#1a1a25;--text:#e8e4dd;--text-muted:#9a9590;
+--bali:#00b894;--phuket:#0984e3;--chiangmai:#e17055;--danang:#6c5ce7;
+--lisbon:#fdcb6e;--tbilisi:#e84393;--medellin:#00cec9;
+--gradient:linear-gradient(135deg,#d4a44c 0%,#b8860b 50%,#d4a44c 100%);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Tajawal',sans-serif;background:var(--dark);color:var(--text);line-height:1.8;overflow-x:hidden}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--darker)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px}
+
+/* Navigation */
+nav{position:fixed;top:0;right:0;left:0;z-index:1000;padding:1rem 2rem;
+background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,164,76,0.15);
+display:flex;justify-content:space-between;align-items:center;transition:transform 0.3s}
+nav.hidden{transform:translateY(-100%)}
+.nav-logo{font-size:1.3rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.3s;white-space:nowrap}
+.nav-links a:hover{color:var(--gold)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+padding:6rem 2rem 4rem;position:relative;overflow:hidden;
+background:radial-gradient(ellipse at center,rgba(212,164,76,0.08) 0%,transparent 70%)}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+background:conic-gradient(from 0deg at 50% 50%,transparent 0%,rgba(212,164,76,0.03) 25%,transparent 50%);
+animation:rotate 30s linear infinite}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.hero-badge{display:inline-block;padding:0.5rem 1.5rem;border:1px solid rgba(212,164,76,0.3);
+border-radius:50px;font-size:0.85rem;color:var(--gold);margin-bottom:2rem;letter-spacing:1px}
+.hero h1{font-family:'Amiri',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;
+background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+margin-bottom:1rem;line-height:1.4}
+.hero .subtitle{font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--text-muted);max-width:700px;margin:0 auto 2rem;font-weight:300}
+.hero .names{font-size:1.8rem;font-weight:800;color:var(--gold-light);margin-bottom:3rem}
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.8rem}
+.scroll-indicator .arrow{width:24px;height:24px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);
+transform:rotate(-45deg);animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:rotate(-45deg) translate(0,0)}50%{transform:rotate(-45deg) translate(5px,5px)}}
+
+/* Section */
+section{padding:5rem 2rem;max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-header h2{font-family:'Amiri',serif;font-size:clamp(2rem,4vw,3rem);
+background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
+.section-header p{color:var(--text-muted);font-size:1.1rem;max-width:600px;margin:0 auto}
+.section-divider{width:80px;height:3px;background:var(--gradient);margin:0 auto 1.5rem;border-radius:2px}
+
+/* City Cards */
+.city-section{padding:4rem 2rem;position:relative}
+.city-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+background:linear-gradient(to left,transparent,rgba(212,164,76,0.2),transparent)}
+.city-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:3rem;flex-wrap:wrap}
+.city-number{font-size:5rem;font-weight:900;opacity:0.1;font-family:'Amiri',serif;line-height:1}
+.city-title h3{font-size:2.2rem;font-weight:800}
+.city-title .country{font-size:1rem;color:var(--text-muted);font-weight:400}
+
+.city-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-bottom:3rem}
+.info-card{background:var(--card);border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,0.05);
+transition:all 0.3s;position:relative;overflow:hidden}
+.info-card:hover{background:var(--card-hover);transform:translateY(-4px);border-color:rgba(212,164,76,0.2)}
+.info-card h4{font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem}
+.info-card h4 .icon{font-size:1.5rem}
+.info-card p,.info-card ul{color:var(--text-muted);font-size:0.95rem;line-height:2}
+.info-card ul{list-style:none;padding:0}
+.info-card ul li{padding:0.3rem 0;padding-right:1.2rem;position:relative}
+.info-card ul li::before{content:'◆';position:absolute;right:0;color:var(--gold);font-size:0.6rem;top:0.5rem}
+
+/* Cost Table */
+.cost-table{width:100%;border-collapse:collapse;margin:1rem 0}
+.cost-table th,.cost-table td{padding:0.8rem 1rem;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05)}
+.cost-table th{color:var(--gold);font-weight:700;font-size:0.9rem}
+.cost-table td{color:var(--text-muted);font-size:0.95rem}
+.cost-table tr:hover td{color:var(--text)}
+.cost-total{font-weight:700;color:var(--gold-light)!important;font-size:1.05rem!important;
+border-top:2px solid rgba(212,164,76,0.3)!important}
+
+/* Story Card */
+.story-card{background:linear-gradient(135deg,rgba(212,164,76,0.08),rgba(212,164,76,0.02));
+border-radius:20px;padding:2.5rem;border:1px solid rgba(212,164,76,0.15);margin:2rem 0}
+.story-card .quote{font-family:'Amiri',serif;font-size:1.3rem;line-height:2;color:var(--text);margin-bottom:1rem}
+.story-card .author{color:var(--gold);font-size:0.95rem;font-weight:600}
+
+/* Comparison */
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.compare-card{background:var(--card);border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,0.05);
+text-align:center;transition:all 0.3s}
+.compare-card:hover{transform:translateY(-6px);border-color:rgba(212,164,76,0.3)}
+.compare-card .city-name{font-size:1.5rem;font-weight:800;margin-bottom:0.5rem}
+.compare-card .cost-range{font-size:2rem;font-weight:900;background:var(--gradient);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:1rem 0}
+.compare-card .cost-label{color:var(--text-muted);font-size:0.85rem}
+.compare-card .rating{display:flex;justify-content:center;gap:0.3rem;margin:1rem 0}
+.compare-card .rating span{width:8px;height:8px;border-radius:50%;background:rgba(212,164,76,0.2)}
+.compare-card .rating span.filled{background:var(--gold)}
+
+/* Pros/Cons */
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0}
+.pros h5{color:#00b894;margin-bottom:0.8rem;font-size:1rem}
+.cons h5{color:#e17055;margin-bottom:0.8rem;font-size:1rem}
+.pros ul li::before{content:'✓';color:#00b894}
+.cons ul li::before{content:'✗';color:#e17055}
+
+/* Tips */
+.tip-card{display:flex;gap:1.2rem;align-items:flex-start;background:var(--card);border-radius:12px;
+padding:1.5rem;margin:1rem 0;border:1px solid rgba(255,255,255,0.05)}
+.tip-number{min-width:40px;height:40px;border-radius:50%;background:var(--gradient);
+display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--dark);font-size:1.1rem}
+.tip-content h5{font-size:1.05rem;margin-bottom:0.4rem}
+.tip-content p{color:var(--text-muted);font-size:0.9rem}
+
+/* Checklist */
+.checklist{columns:2;column-gap:2rem}
+.check-item{break-inside:avoid;display:flex;gap:0.8rem;align-items:flex-start;padding:0.8rem 0}
+.check-box{min-width:22px;height:22px;border:2px solid var(--gold);border-radius:4px;margin-top:2px}
+.check-item p{color:var(--text-muted);font-size:0.95rem}
+.check-item strong{color:var(--text);display:block;font-size:1rem}
+
+/* Final CTA */
+.final-section{text-align:center;padding:6rem 2rem;position:relative}
+.final-section h2{font-family:'Amiri',serif;font-size:clamp(2rem,5vw,3.5rem);
+background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem}
+.final-section p{color:var(--text-muted);font-size:1.2rem;max-width:700px;margin:0 auto 2rem;line-height:2}
+.final-section .heart{font-size:3rem;margin:2rem 0;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+
+/* Color accents per city */
+.city-bali .city-title h3{color:var(--bali)}
+.city-phuket .city-title h3{color:var(--phuket)}
+.city-chiangmai .city-title h3{color:var(--chiangmai)}
+.city-danang .city-title h3{color:var(--danang)}
+.city-lisbon .city-title h3{color:var(--lisbon)}
+.city-tbilisi .city-title h3{color:var(--tbilisi)}
+.city-medellin .city-title h3{color:var(--medellin)}
+
+/* Badge */
+.badge{display:inline-block;padding:0.25rem 0.8rem;border-radius:20px;font-size:0.75rem;font-weight:600;margin:0.2rem}
+.badge-green{background:rgba(0,184,148,0.15);color:#00b894}
+.badge-blue{background:rgba(9,132,227,0.15);color:#0984e3}
+.badge-orange{background:rgba(225,112,85,0.15);color:#e17055}
+.badge-purple{background:rgba(108,92,231,0.15);color:#6c5ce7}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .city-grid{grid-template-columns:1fr}
+  .pros-cons{grid-template-columns:1fr}
+  .checklist{columns:1}
+  .compare-grid{grid-template-columns:1fr}
+  section{padding:3rem 1.2rem}
+  .city-number{font-size:3rem}
+}
+
+/* Fade in animation */
+.fade-in{opacity:0;transform:translateY(30px);transition:all 0.8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* Visa info */
+.visa-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1rem 0}
+.visa-item{background:rgba(212,164,76,0.05);border-radius:10px;padding:1.2rem;text-align:center;border:1px solid rgba(212,164,76,0.1)}
+.visa-item .days{font-size:2rem;font-weight:900;color:var(--gold)}
+.visa-item .type{font-size:0.85rem;color:var(--text-muted)}
+
+/* Footer */
+footer{text-align:center;padding:2rem;color:var(--text-muted);font-size:0.85rem;
+border-top:1px solid rgba(255,255,255,0.05)}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <div class="nav-logo">دليل الحياة الجديدة</div>
+  <div class="nav-links">
+    <a href="#intro">المقدمة</a>
+    <a href="#bali">بالي</a>
+    <a href="#phuket">بوكيت</a>
+    <a href="#chiangmai">شنغماي</a>
+    <a href="#danang">دا نانغ</a>
+    <a href="#lisbon">لشبونة</a>
+    <a href="#tbilisi">تبليسي</a>
+    <a href="#compare">المقارنة</a>
+    <a href="#nomad">البدو الرقميون</a>
+    <a href="#checklist">القائمة</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="intro">
+  <div class="hero-badge">الدليل الشامل للحياة في الخارج — نسخة 2026</div>
+  <h1>حياتك الجديدة تبدأ من هنا</h1>
+  <p class="subtitle">دليل شامل ومفصّل لكل من يحلم بترك الروتين والانطلاق نحو حياة مليئة بالمغامرة والحرية والسعادة</p>
+  <div class="names">فراس و رهف</div>
+  <p class="subtitle" style="font-size:1rem;max-width:500px">كل الأسعار بالريال السعودي — كل التفاصيل من تجارب حقيقية — كل ما تحتاجه لاتخاذ القرار</p>
+  <div class="scroll-indicator">
+    <span>اكتشف</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- Why Leave Section -->
+<section id="why" class="fade-in">
+  <div class="section-header">
+    <div class="section-divider"></div>
+    <h2>لماذا يغادر السعوديون؟</h2>
+    <p>قصص حقيقية من أشخاص اتخذوا القرار وغيّروا حياتهم</p>
+  </div>
+
+  <div class="story-card">
+    <p class="quote">«كنت أعمل ١٢ ساعة يومياً في الرياض، أعود للبيت منهك، وأكرر نفس اليوم. لما انتقلت لبالي مع زوجتي، اكتشفت إن الحياة ممكن تكون أبسط وأجمل بكثير. نفس الدخل، لكن نصف التكاليف وضعف السعادة.»</p>
+    <span class="author">— خالد، مطور برمجيات، ٢٩ سنة، انتقل من جدة إلى بالي</span>
+  </div>
+
+  <div class="city-grid" style="margin-top:2rem">
+    <div class="info-card">
+      <h4><span class="icon">💰</span> التكلفة والادخار</h4>
+      <p>متوسط إيجار شقة في الرياض: ٤,٠٠٠-٨,٠٠٠ ريال. في بالي فيلا كاملة بمسبح: ٢,٠٠٠-٤,٥٠٠ ريال. الفرق يروح للتجارب والسفر والادخار. أكل المطاعم في بالي بـ ١٥-٣٠ ريال للوجبة الكاملة.</p>
+    </div>
+    <div class="info-card">
+      <h4><span class="icon">🌍</span> نوعية الحياة</h4>
+      <p>بدل ما تقضي ساعتين في زحمة الرياض، تصحى تسمع صوت الأمواج. تشتغل من كافيه يطل على حقول الأرز. تنهي يومك بغروب على البحر. مو حلم — هذي حياة آلاف الناس اليوم.</p>
+    </div>
+    <div class="info-card">
+      <h4><span class="icon">🤝</span> المجتمع</h4>
+      <p>مجتمعات البدو الرقميين (Digital Nomads) منتشرة في كل مدينة. تلقى سعوديين وعرب وناس من كل العالم. أحداث أسبوعية، ورش عمل، رحلات جماعية. ما راح تحس بالوحدة أبداً.</p>
+    </div>
+  </div>
+
+  <div class="story-card">
+    <p class="quote">«أكبر خوف كان من كلام الناس: "وش تسوي بحياتك؟" بعد سنة في تايلاند، نفس الناس صاروا يسألونني "كيف أسوي زيك؟" القرار الصعب اليوم هو اللي يصنع الحياة الحلوة بكرة.»</p>
+    <span class="author">— نورة، مصممة جرافيك، ٢٧ سنة، انتقلت من الدمام إلى شنغماي</span>
+  </div>
+</section>
+
+<!-- ======================= BALI ======================= -->
+<section id="bali" class="city-section city-bali fade-in">
+  <div class="city-header">
+    <div class="city-number">01</div>
+    <div class="city-title">
+      <h3>بالي، إندونيسيا</h3>
+      <span class="country">جزيرة الآلهة — الوجهة #1 للبدو الرقميين في العالم</span>
+    </div>
+  </div>
+
+  <div class="city-grid">
+    <div class="info-card">
+      <h4><span class="icon">🏠</span> السكن</h4>
+      <ul>
+        <li>فيلا بمسبح خاص (غرفة نوم واحدة): ٢,٢٥٠ - ٤,٥٠٠ ريال/شهر</li>
+        <li>شقة استوديو في تشانغو: ١,٥٠٠ - ٢,٦٠٠ ريال/شهر</li>
+        <li>فيلا فاخرة (٣ غرف): ٥,٦٠٠ - ١١,٢٥٠ ريال/شهر</li>
+        <li>غرفة في بيت مشترك: ٧٥٠ - ١,٥٠٠ ريال/شهر</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--bali);font-weight:600">أفضل المناطق: تشانغو (Canggu) للعمل والكافيهات، أوبود (Ubud) للهدوء والطبيعة، سيمينياك (Seminyak) للحياة الاجتماعية</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🍜</span> الأكل والمطاعم</h4>
+      <ul>
+        <li>وجبة محلية (ناسي غورينغ/ميي غورينغ): ٨ - ١٥ ريال</li>
+        <li>مطعم غربي/عربي: ٣٠ - ٧٥ ريال</li>
+        <li>كافيه مع قهوة وكيك: ١٥ - ٣٥ ريال</li>
+        <li>مشتريات السوبرماركت الشهرية: ٥٦٠ - ١,١٢٥ ريال</li>
+        <li>مطعم عربي (شاورما/كبسة): ٢٠ - ٤٥ ريال</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--bali);font-weight:600">يوجد مطاعم حلال كثيرة — إندونيسيا أكبر دولة إسلامية في العالم! تطبيق HalalTrip يساعدكم تلقون المطاعم</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">💻</span> العمل عن بُعد</h4>
+      <ul>
+        <li>إنترنت: ٥٠-١٠٠ Mbps في الكافيهات وأماكن العمل المشتركة</li>
+        <li>Coworking Space: ٣٧٥ - ٧٥٠ ريال/شهر</li>
+        <li>أشهر الأماكن: Dojo Bali, Outpost, Tropical Nomad</li>
+        <li>أغلب الكافيهات فيها واي فاي مجاني وأماكن مريحة للشغل</li>
+        <li>فرق التوقيت مع السعودية: +٥ ساعات</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🌙</span> الحياة الليلية والترفيه</h4>
+      <ul>
+        <li>أشهر المناطق: سيمينياك (Seminyak) وتشانغو (Canggu)</li>
+        <li>نوادي الشاطئ: Potato Head, Finns Beach Club, La Brisa</li>
+        <li>حفلات الغروب: Atlas Beach Club, Single Fin (أولواتو)</li>
+        <li>أنشطة هادئة: يوغا، تأمل، جولات الدراجة، ركوب الأمواج</li>
+        <li>سينما في الهواء الطلق، أسواق ليلية، عروض رقص تقليدية</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🛵</span> المواصلات</h4>
+      <ul>
+        <li>إيجار سكوتر شهري: ١٥٠ - ٣٠٠ ريال (الوسيلة الأفضل!)</li>
+        <li>Grab (مثل أوبر): ٧ - ٢٢ ريال للرحلة</li>
+        <li>إيجار سيارة مع سائق يومي: ١٥٠ - ٢٢٥ ريال</li>
+        <li>لا يوجد مترو أو باصات عامة منظمة</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">📋</span> التأشيرة</h4>
+      <div class="visa-info">
+        <div class="visa-item">
+          <div class="days">30</div>
+          <div class="type">يوم مجاني عند الوصول<br>(VOA)</div>
+        </div>
+        <div class="visa-item">
+          <div class="days">60</div>
+          <div class="type">يوم — تمديد لمرة واحدة<br>(B211 Tourist)</div>
+        </div>
+        <div class="visa-item">
+          <div class="days">365</div>
+          <div class="type">يوم — تأشيرة البدو الرقميين<br>(D-Visa 2024+)</div>
+        </div>
+      </div>
+      <p style="margin-top:0.5rem;color:var(--text-muted);font-size:0.85rem">تأشيرة البدو الرقميين الجديدة (D-Visa) تعفي من الضرائب المحلية وتسمح بالإقامة سنة كاملة — التكلفة ≈ ١,٥٠٠ ريال</p>
+    </div>
+  </div>
+
+  <!-- Cost Summary -->
+  <div class="info-card" style="max-width:600px;margin:0 auto">
+    <h4><span class="icon">💵</span> ملخص التكاليف الشهرية (لزوجين)</h4>
+    <table class="cost-table">
+      <tr><th>البند</th><th>المبلغ (ريال)</th></tr>
+      <tr><td>سكن (فيلا بمسبح)</td><td>٣,٠٠٠ - ٤,٥٠٠</td></tr>
+      <tr><td>أكل ومطاعم</td><td>١,٥٠٠ - ٢,٥٠٠</td></tr>
+      <tr><td>مواصلات (٢ سكوتر)</td><td>٣٠٠ - ٦٠٠</td></tr>
+      <tr><td>إنترنت + جوال</td><td>١٥٠ - ٣٠٠</td></tr>
+      <tr><td>ترفيه وأنشطة</td><td>٧٥٠ - ١,٥٠٠</td></tr>
+      <tr><td>تأمين صحي دولي</td><td>٥٠٠ - ٨٠٠</td></tr>
+      <tr><td>مساحة عمل مشتركة</td><td>٣٧٥ - ٧٥٠</td></tr>
+      <tr class="cost-total"><td><strong>الإجمالي</strong></td><td><strong>٦,٥٧٥ - ١٠,٩٥٠</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="story-card" style="margin-top:2rem">
+    <p class="quote">«بالي غيّرت حياتي أنا وزوجتي بالكامل. نصحى على صوت العصافير، نشتغل من كافيه يطل على حقول الأرز، وبالليل نتعشى سمك طازج على الشاطئ بـ ٤٠ ريال للشخص. ميزانيتنا الشهرية أقل من اللي كنا نصرفها في الرياض، لكن نوعية حياتنا تضاعفت ١٠ مرات.»</p>
+    <span class="author">— عبدالرحمن وسارة، زوجان سعوديان، يعيشان في تشانغو منذ ٢٠٢٤</span>
+  </div>
+
+  <div class="pros-cons">
+    <div class="pros">
+      <h5>المميزات</h5>
+      <ul>
+        <li>تكلفة معيشة منخفضة جداً مع جودة حياة عالية</li>
+        <li>طبيعة خلابة — شواطئ، غابات، براكين، حقول أرز</li>
+        <li>مجتمع بدو رقميين ضخم ونشط</li>
+        <li>طعام حلال متوفر في كل مكان</li>
+        <li>ثقافة ودودة ومحترمة</li>
+        <li>تأشيرة البدو الرقميين الجديدة (سنة كاملة)</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h5>التحديات</h5>
+      <ul>
+        <li>الزحمة في المناطق السياحية (خصوصاً تشانغو)</li>
+        <li>الإنترنت أحياناً غير مستقر في بعض المناطق</li>
+        <li>موسم الأمطار (نوفمبر-مارس) ممكن يكون مزعج</li>
+        <li>الشوارع ضيقة والقيادة فوضوية</li>
+        <li>بعض المناطق صارت سياحية أكثر من اللازم</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PHUKET ======================= -->
+<section id="phuket" class="city-section city-phuket fade-in">
+  <div class="city-header">
+    <div class="city-number">02</div>
+    <div class="city-title">
+      <h3>بوكيت، تايلاند</h3>
+      <span class="country">لؤلؤة أندامان — أجمل جزيرة في جنوب شرق آسيا</span>
+    </div>
+  </div>
+
+  <div class="city-grid">
+    <div class="info-card">
+      <h4><span class="icon">🏠</span> السكن</h4>
+      <ul>
+        <li>كوندو (غرفة نوم واحدة) مع مسبح: ١,٨٧٥ - ٣,٧٥٠ ريال/شهر</li>
+        <li>فيلا بمسبح خاص: ٣,٧٥٠ - ٧,٥٠٠ ريال/شهر</li>
+        <li>شقة عادية: ١,١٢٥ - ٢,٢٥٠ ريال/شهر</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--phuket);font-weight:600">أفضل المناطق: راوائي (Rawai) للعائلات والهدوء، بانق تاو (Bang Tao) للشواطئ الفاخرة، بوكيت تاون للأسعار المنخفضة</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🍜</span> الأكل والمطاعم</h4>
+      <ul>
+        <li>أكل الشارع (باد تاي، سوم تام): ٧ - ١٥ ريال</li>
+        <li>مطعم محلي: ١٥ - ٣٧ ريال</li>
+        <li>مطعم عربي/حلال: ٢٢ - ٥٦ ريال</li>
+        <li>سوبرماركت شهري: ٧٥٠ - ١,٥٠٠ ريال</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--phuket);font-weight:600">الأكل الحلال متوفر بسبب الجالية المسلمة الكبيرة في جنوب تايلاند. حي بان زان فيه مطاعم حلال ممتازة</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">💻</span> العمل عن بُعد</h4>
+      <ul>
+        <li>إنترنت: ٥٠-٢٠٠ Mbps (تايلاند من أسرع الدول في آسيا)</li>
+        <li>Coworking: ٣٠٠ - ٥٦٠ ريال/شهر</li>
+        <li>أشهر الأماكن: Hatch Coworking, SandBox, Phuket CoWork</li>
+        <li>فرق التوقيت مع السعودية: +٤ ساعات</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🌙</span> الحياة الليلية والترفيه</h4>
+      <ul>
+        <li>شارع بانغلا (Bangla Road): أشهر شارع ترفيهي في آسيا</li>
+        <li>نوادي الشاطئ: Catch Beach Club, Café Del Mar, XANA</li>
+        <li>أنشطة: غطس، سنوركلنغ، جولات القوارب، تسلق الصخور</li>
+        <li>جزر فاي فاي (Phi Phi) — رحلة يوم لا تُنسى</li>
+        <li>أسواق ليلية (Walking Street) كل أحد وثلاثاء</li>
+        <li>ملاكمة تايلاندية (Muay Thai) — فرجة أو تدريب</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🛵</span> المواصلات</h4>
+      <ul>
+        <li>سكوتر شهري: ١١٢ - ٢٢٥ ريال</li>
+        <li>Grab: ٧ - ٣٧ ريال</li>
+        <li>إيجار سيارة شهري: ٧٥٠ - ١,٥٠٠ ريال</li>
+        <li>التوك توك: ١١ - ٢٢ ريال (سعر ثابت تقريباً)</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">📋</span> التأشيرة</h4>
+      <div class="visa-info">
+        <div class="visa-item">
+          <div class="days">30</div>
+          <div class="type">يوم بدون تأشيرة<br>(جواز سعودي)</div>
+        </div>
+        <div class="visa-item">
+          <div class="days">60</div>
+          <div class="type">يوم — تأشيرة سياحية<br>(قابلة للتمديد ٣٠ يوم)</div>
+        </div>
+        <div class="visa-item">
+          <div class="days">180</div>
+          <div class="type">يوم — تأشيرة DTV<br>(Destination Thailand Visa)</div>
+        </div>
+      </div>
+      <p style="margin-top:0.5rem;color:var(--text-muted);font-size:0.85rem">تأشيرة DTV الجديدة (2024+) مصممة للعاملين عن بُعد — ٣٧٥ ريال فقط، قابلة للتمديد حتى ٥ سنوات</p>
+    </div>
+  </div>
+
+  <div class="info-card" style="max-width:600px;margin:0 auto">
+    <h4><span class="icon">💵</span> ملخص التكاليف الشهرية (لزوجين)</h4>
+    <table class="cost-table">
+      <tr><th>البند</th><th>المبلغ (ريال)</th></tr>
+      <tr><td>سكن (كوندو مع مسبح)</td><td>٢,٢٥٠ - ٣,٧٥٠</td></tr>
+      <tr><td>أكل ومطاعم</td><td>١,٥٠٠ - ٣,٠٠٠</td></tr>
+      <tr><td>مواصلات</td><td>٣٠٠ - ٧٥٠</td></tr>
+      <tr><td>إنترنت + جوال</td><td>١٥٠ - ٢٦٠</td></tr>
+      <tr><td>ترفيه وأنشطة</td><td>٧٥٠ - ١,٨٧٥</td></tr>
+      <tr><td>تأمين صحي</td><td>٥٠٠ - ٨٠٠</td></tr>
+      <tr class="cost-total"><td><strong>الإجمالي</strong></td><td><strong>٥,٤٥٠ - ١٠,٤٣٥</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="story-card" style="margin-top:2rem">
+    <p class="quote">«بوكيت عطتنا كل شي: بحر نظيف، أكل حلال، إنترنت سريع، ومجتمع عربي ودود. كل يوم جمعة نروح المسجد ونحس إننا ما فقدنا هويتنا. بالعكس، صرنا نقدّر ثقافتنا أكثر لما شفنا العالم.»</p>
+    <span class="author">— فهد وليان، من جدة، مقيمان في بوكيت منذ ٢٠٢٥</span>
+  </div>
+
+  <div class="pros-cons">
+    <div class="pros">
+      <h5>المميزات</h5>
+      <ul>
+        <li>إنترنت من أسرع وأثبت الخيارات في آسيا</li>
+        <li>بنية تحتية ممتازة — مستشفيات دولية، مولات</li>
+        <li>جالية مسلمة كبيرة وأكل حلال في كل مكان</li>
+        <li>شواطئ مذهلة وجزر قريبة لا حصر لها</li>
+        <li>تأشيرة DTV الجديدة سهلة وطويلة المدة</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h5>التحديات</h5>
+      <ul>
+        <li>موسم الأمطار (مايو-أكتوبر) أمطار غزيرة</li>
+        <li>زحمة سياحية شديدة في الموسم (نوفمبر-أبريل)</li>
+        <li>أغلى من باقي مدن تايلاند</li>
+        <li>القيادة خطيرة — حوادث السكوتر شائعة</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CHIANG MAI ======================= -->
+<section id="chiangmai" class="city-section city-chiangmai fade-in">
+  <div class="city-header">
+    <div class="city-number">03</div>
+    <div class="city-title">
+      <h3>شنغماي، تايلاند</h3>
+      <span class="country">عاصمة البدو الرقميين — أرخص وأفضل مدينة للعمل عن بُعد</span>
+    </div>
+  </div>
+
+  <div class="city-grid">
+    <div class="info-card">
+      <h4><span class="icon">🏠</span> السكن</h4>
+      <ul>
+        <li>كوندو مفروش (استوديو): ٩٠٠ - ١,٨٧٥ ريال/شهر</li>
+        <li>شقة غرفة نوم واحدة: ١,٥٠٠ - ٢,٦٠٠ ريال/شهر</li>
+        <li>بيت مع حديقة: ١,٨٧٥ - ٣,٧٥٠ ريال/شهر</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--chiangmai);font-weight:600">أفضل المناطق: نيمان (Nimman) للكافيهات والحياة الاجتماعية، المدينة القديمة للثقافة، هانغ دونغ للهدوء</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🍜</span> الأكل</h4>
+      <ul>
+        <li>أكل الشارع: ٤ - ١١ ريال</li>
+        <li>مطعم محلي: ١١ - ٣٠ ريال</li>
+        <li>كافيه فاخر: ١٥ - ٣٧ ريال</li>
+        <li>سوبرماركت شهري: ٥٦٠ - ١,١٢٥ ريال</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--chiangmai);font-weight:600">أرخص مدينة في القائمة للأكل! كاو سوي (Khao Soi) الطبق الشهير لازم تجربونه</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">💻</span> العمل عن بُعد</h4>
+      <ul>
+        <li>إنترنت: ١٠٠-٣٠٠ Mbps (الأسرع في القائمة!)</li>
+        <li>Coworking: ١٨٧ - ٣٧٥ ريال/شهر (الأرخص!)</li>
+        <li>أشهر الأماكن: CAMP, Punspace, Hub53, Yellow</li>
+        <li>كل كافيه تقريباً مجهز للعمل</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🌙</span> الحياة والترفيه</h4>
+      <ul>
+        <li>أسواق ليلية أسطورية: Sunday Walking Street, Saturday Night Market</li>
+        <li>معابد تاريخية: Doi Suthep, Wat Chedi Luang</li>
+        <li>رحلات طبيعة: شلالات، غابات، محميات أفيال أخلاقية</li>
+        <li>دورات طبخ تايلاندي، تدليك تايلاندي (٢٢ ريال/ساعة!)</li>
+        <li>مهرجان المصابيح (Yi Peng) — من أجمل المشاهد في العالم</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-card" style="max-width:600px;margin:0 auto">
+    <h4><span class="icon">💵</span> ملخص التكاليف الشهرية (لزوجين)</h4>
+    <table class="cost-table">
+      <tr><th>البند</th><th>المبلغ (ريال)</th></tr>
+      <tr><td>سكن</td><td>١,٥٠٠ - ٢,٦٠٠</td></tr>
+      <tr><td>أكل ومطاعم</td><td>١,١٢٥ - ٢,٢٥٠</td></tr>
+      <tr><td>مواصلات</td><td>١٥٠ - ٣٧٥</td></tr>
+      <tr><td>إنترنت + جوال</td><td>١١٢ - ١٨٧</td></tr>
+      <tr><td>ترفيه وأنشطة</td><td>٥٦٠ - ١,١٢٥</td></tr>
+      <tr><td>تأمين صحي</td><td>٥٠٠ - ٨٠٠</td></tr>
+      <tr class="cost-total"><td><strong>الإجمالي</strong></td><td><strong>٣,٩٤٧ - ٧,٣٣٧</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="pros-cons" style="margin-top:2rem">
+    <div class="pros">
+      <h5>المميزات</h5>
+      <ul>
+        <li>أرخص مدينة في القائمة — مثالية للبداية</li>
+        <li>أسرع وأثبت إنترنت</li>
+        <li>أكبر مجتمع بدو رقميين في العالم</li>
+        <li>مستوى أمان عالي جداً</li>
+        <li>ثقافة غنية ومعابد تاريخية</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h5>التحديات</h5>
+      <ul>
+        <li>لا يوجد بحر (مدينة داخلية)</li>
+        <li>موسم الدخان (مارس-أبريل) تلوث هواء شديد</li>
+        <li>أقل خيارات حلال من بوكيت</li>
+        <li>ممكن تحس بالملل بعد فترة — مدينة هادئة</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DA NANG ======================= -->
+<section id="danang" class="city-section city-danang fade-in">
+  <div class="city-header">
+    <div class="city-number">04</div>
+    <div class="city-title">
+      <h3>دا نانغ، فيتنام</h3>
+      <span class="country">الجوهرة المخفية — شاطئ + مدينة + جبل في مكان واحد</span>
+    </div>
+  </div>
+
+  <div class="city-grid">
+    <div class="info-card">
+      <h4><span class="icon">🏠</span> السكن</h4>
+      <ul>
+        <li>شقة (غرفة واحدة) قرب البحر: ١,١٢٥ - ٢,٢٥٠ ريال/شهر</li>
+        <li>شقة فاخرة مع مسبح: ١,٨٧٥ - ٣,٧٥٠ ريال/شهر</li>
+        <li>استوديو: ٧٥٠ - ١,٥٠٠ ريال/شهر</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--danang);font-weight:600">أفضل المناطق: شاطئ ماي خي (My Khe) — صُنّف من أجمل شواطئ آسيا، هان ماركت للحياة المحلية</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🍜</span> الأكل</h4>
+      <ul>
+        <li>فو (Pho) + باين مي (Banh Mi): ٤ - ١١ ريال</li>
+        <li>مطعم محلي: ٧ - ٢٢ ريال</li>
+        <li>سيفوود طازج فاخر: ١٥ - ٣٧ ريال</li>
+        <li>قهوة فيتنامية (أفضل قهوة بالعالم!): ٣ - ٧ ريال</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--danang);font-weight:600">تنبيه: خيارات الحلال محدودة — لكن المأكولات البحرية آمنة والمطاعم الهندية/الماليزية متوفرة</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">💻</span> العمل عن بُعد</h4>
+      <ul>
+        <li>إنترنت: ٥٠-١٥٠ Mbps</li>
+        <li>Coworking: ١٥٠ - ٣٧٥ ريال/شهر</li>
+        <li>أشهر الأماكن: Enouvo, Toong, Hub.IT</li>
+        <li>كافيهات رائعة بإطلالات بحرية</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🎯</span> أنشطة لا تفوّت</h4>
+      <ul>
+        <li>جسر اليد الذهبية (Golden Bridge) — أيقونة فيتنام</li>
+        <li>مدينة هوي آن القديمة (٣٠ دقيقة) — موقع تراث عالمي</li>
+        <li>جبال با نا هيلز — تلفريك من أطول العالم</li>
+        <li>شاطئ ماي خي — سباحة، سيرفنغ، غروب</li>
+        <li>أسواق ليلية على ضفاف النهر</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-card" style="max-width:600px;margin:0 auto">
+    <h4><span class="icon">💵</span> ملخص التكاليف الشهرية (لزوجين)</h4>
+    <table class="cost-table">
+      <tr><th>البند</th><th>المبلغ (ريال)</th></tr>
+      <tr><td>سكن (شقة قرب البحر)</td><td>١,٥٠٠ - ٢,٦٠٠</td></tr>
+      <tr><td>أكل ومطاعم</td><td>٩٠٠ - ١,٨٧٥</td></tr>
+      <tr><td>مواصلات</td><td>١٥٠ - ٣٠٠</td></tr>
+      <tr><td>إنترنت + جوال</td><td>٧٥ - ١٥٠</td></tr>
+      <tr><td>ترفيه وأنشطة</td><td>٣٧٥ - ٩٠٠</td></tr>
+      <tr><td>تأمين صحي</td><td>٥٠٠ - ٨٠٠</td></tr>
+      <tr class="cost-total"><td><strong>الإجمالي</strong></td><td><strong>٣,٥٠٠ - ٦,٦٢٥</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="pros-cons" style="margin-top:2rem">
+    <div class="pros">
+      <h5>المميزات</h5>
+      <ul>
+        <li>أرخص مدينة ساحلية في القائمة</li>
+        <li>شاطئ ماي خي من أجمل شواطئ آسيا</li>
+        <li>مدينة نظيفة ومنظمة بشكل ممتاز</li>
+        <li>القهوة الفيتنامية لوحدها سبب كافي</li>
+        <li>قريبة من هوي آن التاريخية</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h5>التحديات</h5>
+      <ul>
+        <li>خيارات الحلال محدودة</li>
+        <li>حاجز اللغة — الإنجليزية أقل انتشاراً</li>
+        <li>موسم الأعاصير (سبتمبر-ديسمبر)</li>
+        <li>أقل نشاطاً من بالي وبوكيت ليلاً</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LISBON ======================= -->
+<section id="lisbon" class="city-section city-lisbon fade-in">
+  <div class="city-header">
+    <div class="city-number">05</div>
+    <div class="city-title">
+      <h3>لشبونة، البرتغال</h3>
+      <span class="country">عاصمة أوروبا للبدو الرقميين — شمس، ثقافة، وتأشيرة ذهبية</span>
+    </div>
+  </div>
+
+  <div class="city-grid">
+    <div class="info-card">
+      <h4><span class="icon">🏠</span> السكن</h4>
+      <ul>
+        <li>شقة (غرفة واحدة) وسط المدينة: ٣,٧٥٠ - ٥,٦٢٥ ريال/شهر</li>
+        <li>شقة خارج المركز: ٢,٦٢٥ - ٣,٧٥٠ ريال/شهر</li>
+        <li>استوديو: ٢,٢٥٠ - ٣,٣٧٥ ريال/شهر</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--lisbon);font-weight:600">أفضل المناطق: ألفاما (Alfama) للأجواء التاريخية، بايرو ألتو (Bairro Alto) للحياة الاجتماعية، كاسكايش (Cascais) للشاطئ</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🍜</span> الأكل</h4>
+      <ul>
+        <li>وجبة محلية (باستل دي ناتا + قهوة): ٧ - ١٥ ريال</li>
+        <li>مطعم محلي (سيفوود): ٢٢ - ٥٦ ريال</li>
+        <li>مطعم عربي/حلال: ٣٠ - ٧٥ ريال</li>
+        <li>سوبرماركت شهري: ١,١٢٥ - ١,٨٧٥ ريال</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--lisbon);font-weight:600">مطاعم حلال متوفرة خاصة في مارتيم مونيز (Martim Moniz) — الحي العربي</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">💻</span> العمل عن بُعد</h4>
+      <ul>
+        <li>إنترنت: ١٠٠-٥٠٠ Mbps (أوروبي ممتاز)</li>
+        <li>Coworking: ٥٦٠ - ١,١٢٥ ريال/شهر</li>
+        <li>أشهر الأماكن: Second Home, Outsite, Heden</li>
+        <li>فرق التوقيت مع السعودية: -٣ ساعات (مناسب جداً!)</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🎯</span> لماذا لشبونة؟</h4>
+      <ul>
+        <li>٣٠٠ يوم شمس في السنة — أكثر عاصمة مشمسة بأوروبا</li>
+        <li>تأشيرة D7 للعاملين عن بُعد — طريق للإقامة الدائمة</li>
+        <li>بوابة لكل أوروبا — رحلات رخيصة لكل مكان</li>
+        <li>أمان عالي — البرتغال من أأمن دول العالم</li>
+        <li>ثقافة غنية: فادو، ترام ٢٨، أحياء تاريخية</li>
+        <li>شواطئ قريبة: كاسكايش (٣٠ دقيقة)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-card" style="max-width:600px;margin:0 auto">
+    <h4><span class="icon">💵</span> ملخص التكاليف الشهرية (لزوجين)</h4>
+    <table class="cost-table">
+      <tr><th>البند</th><th>المبلغ (ريال)</th></tr>
+      <tr><td>سكن</td><td>٣,٣٧٥ - ٥,٢٥٠</td></tr>
+      <tr><td>أكل ومطاعم</td><td>١,٨٧٥ - ٣,٣٧٥</td></tr>
+      <tr><td>مواصلات (مترو + ترام)</td><td>٣٧٥ - ٥٦٠</td></tr>
+      <tr><td>إنترنت + جوال</td><td>١٨٧ - ٢٦٠</td></tr>
+      <tr><td>ترفيه وأنشطة</td><td>٧٥٠ - ١,٥٠٠</td></tr>
+      <tr><td>تأمين صحي</td><td>٧٥٠ - ١,١٢٥</td></tr>
+      <tr class="cost-total"><td><strong>الإجمالي</strong></td><td><strong>٧,٣١٢ - ١٢,٠٧٠</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="pros-cons" style="margin-top:2rem">
+    <div class="pros">
+      <h5>المميزات</h5>
+      <ul>
+        <li>بوابة أوروبا — سافر لكل القارة بأسعار رخيصة</li>
+        <li>فرق توقيت مناسب للعمل مع السعودية</li>
+        <li>طريق للإقامة الأوروبية الدائمة</li>
+        <li>شمس ٣٠٠ يوم — أفضل طقس بأوروبا</li>
+        <li>ثقافة وتاريخ مذهلين</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h5>التحديات</h5>
+      <ul>
+        <li>أغلى مدينة في القائمة</li>
+        <li>السكن صعب إيجاده في المواسم</li>
+        <li>بيروقراطية أوروبية للتأشيرات</li>
+        <li>الرطوبة عالية في الصيف</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= TBILISI ======================= -->
+<section id="tbilisi" class="city-section city-tbilisi fade-in">
+  <div class="city-header">
+    <div class="city-number">06</div>
+    <div class="city-title">
+      <h3>تبليسي، جورجيا</h3>
+      <span class="country">الجوهرة المخفية — إقامة سنة بدون تأشيرة + تكلفة خيالية</span>
+    </div>
+  </div>
+
+  <div class="city-grid">
+    <div class="info-card">
+      <h4><span class="icon">🏠</span> السكن</h4>
+      <ul>
+        <li>شقة (غرفة واحدة) وسط المدينة: ١,١٢٥ - ٢,٢٥٠ ريال/شهر</li>
+        <li>شقة مفروشة فاخرة: ١,٨٧٥ - ٣,٠٠٠ ريال/شهر</li>
+        <li>استوديو: ٧٥٠ - ١,٥٠٠ ريال/شهر</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--tbilisi);font-weight:600">أفضل المناطق: فيرا (Vera) و فاكي (Vake) — أحياء راقية وآمنة وقريبة من كل شي</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🍜</span> الأكل</h4>
+      <ul>
+        <li>خينكالي (Khinkali) — الزلابية الجورجية: ٧ ريال لـ ١٠ حبات!</li>
+        <li>خاتشابوري (Khachapuri) — فطيرة الجبن: ٧ - ١٥ ريال</li>
+        <li>مطعم محلي كامل: ١٥ - ٣٧ ريال</li>
+        <li>سوبرماركت شهري: ٥٦٠ - ١,١٢٥ ريال</li>
+      </ul>
+      <p style="margin-top:1rem;color:var(--tbilisi);font-weight:600">الأكل الجورجي حلال-friendly — أغلبه لحم وجبن وخبز. مطاعم حلال متوفرة خاصة في منطقة المسجد</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">📋</span> التأشيرة — الأفضل في القائمة!</h4>
+      <div class="visa-info">
+        <div class="visa-item">
+          <div class="days">365</div>
+          <div class="type">يوم بدون تأشيرة!<br>(جواز سعودي)</div>
+        </div>
+      </div>
+      <p style="margin-top:1rem">جورجيا تسمح لحاملي الجواز السعودي بالإقامة سنة كاملة بدون أي تأشيرة أو رسوم. فقط ادخل وعيش!</p>
+    </div>
+
+    <div class="info-card">
+      <h4><span class="icon">🎯</span> لماذا تبليسي؟</h4>
+      <ul>
+        <li>سنة كاملة بدون تأشيرة — الأسهل في العالم</li>
+        <li>ضريبة ١% فقط للعاملين عن بُعد</li>
+        <li>حمامات كبريتية تاريخية في قلب المدينة</li>
+        <li>جبال القوقاز على بُعد ساعتين</li>
+        <li>أربعة فصول حقيقية — ثلج في الشتاء وصيف معتدل</li>
+        <li>تاريخ عمره أكثر من ١,٥٠٠ سنة</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-card" style="max-width:600px;margin:0 auto">
+    <h4><span class="icon">💵</span> ملخص التكاليف الشهرية (لزوجين)</h4>
+    <table class="cost-table">
+      <tr><th>البند</th><th>المبلغ (ريال)</th></tr>
+      <tr><td>سكن</td><td>١,١٢٥ - ٢,٢٥٠</td></tr>
+      <tr><td>أكل ومطاعم</td><td>١,١٢٥ - ٢,٢٥٠</td></tr>
+      <tr><td>مواصلات (مترو + تاكسي)</td><td>١٥٠ - ٣٧٥</td></tr>
+      <tr><td>إنترنت + جوال</td><td>٧٥ - ١٥٠</td></tr>
+      <tr><td>ترفيه وأنشطة</td><td>٣٧٥ - ٩٠٠</td></tr>
+      <tr><td>تأمين صحي</td><td>٤٥٠ - ٧٥٠</td></tr>
+      <tr class="cost-total"><td><strong>الإجمالي</strong></td><td><strong>٣,٣٠٠ - ٦,٦٧٥</strong></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ======================= COMPARISON ======================= -->
+<section id="compare" class="fade-in">
+  <div class="section-header">
+    <div class="section-divider"></div>
+    <h2>المقارنة الشاملة</h2>
+    <p>كل المدن جنب بعض — اختار اللي يناسبك ورهف</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card">
+      <div class="city-name" style="color:var(--bali)">بالي</div>
+      <span class="badge badge-green">الأشهر</span>
+      <div class="cost-range">٦,٥٧٥ - ١٠,٩٥٠</div>
+      <div class="cost-label">ريال/شهر لزوجين</div>
+      <div class="rating"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></div>
+      <p style="color:var(--text-muted);font-size:0.85rem">حلال ★★★★★ | إنترنت ★★★☆☆ | مجتمع ★★★★★</p>
+    </div>
+
+    <div class="compare-card">
+      <div class="city-name" style="color:var(--phuket)">بوكيت</div>
+      <span class="badge badge-blue">أفضل بنية تحتية</span>
+      <div class="cost-range">٥,٤٥٠ - ١٠,٤٣٥</div>
+      <div class="cost-label">ريال/شهر لزوجين</div>
+      <div class="rating"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></div>
+      <p style="color:var(--text-muted);font-size:0.85rem">حلال ★★★★☆ | إنترنت ★★★★★ | مجتمع ★★★★☆</p>
+    </div>
+
+    <div class="compare-card">
+      <div class="city-name" style="color:var(--chiangmai)">شنغماي</div>
+      <span class="badge badge-orange">الأرخص</span>
+      <div class="cost-range">٣,٩٤٧ - ٧,٣٣٧</div>
+      <div class="cost-label">ريال/شهر لزوجين</div>
+      <div class="rating"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></div>
+      <p style="color:var(--text-muted);font-size:0.85rem">حلال ★★★☆☆ | إنترنت ★★★★★ | مجتمع ★★★★★</p>
+    </div>
+
+    <div class="compare-card">
+      <div class="city-name" style="color:var(--danang)">دا نانغ</div>
+      <span class="badge badge-purple">أجمل شاطئ</span>
+      <div class="cost-range">٣,٥٠٠ - ٦,٦٢٥</div>
+      <div class="cost-label">ريال/شهر لزوجين</div>
+      <div class="rating"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></div>
+      <p style="color:var(--text-muted);font-size:0.85rem">حلال ★★☆☆☆ | إنترنت ★★★★☆ | مجتمع ★★★☆☆</p>
+    </div>
+
+    <div class="compare-card">
+      <div class="city-name" style="color:var(--lisbon)">لشبونة</div>
+      <span class="badge badge-green">بوابة أوروبا</span>
+      <div class="cost-range">٧,٣١٢ - ١٢,٠٧٠</div>
+      <div class="cost-label">ريال/شهر لزوجين</div>
+      <div class="rating"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></div>
+      <p style="color:var(--text-muted);font-size:0.85rem">حلال ★★★☆☆ | إنترنت ★★★★★ | مجتمع ★★★★☆</p>
+    </div>
+
+    <div class="compare-card">
+      <div class="city-name" style="color:var(--tbilisi)">تبليسي</div>
+      <span class="badge badge-orange">أسهل تأشيرة</span>
+      <div class="cost-range">٣,٣٠٠ - ٦,٦٧٥</div>
+      <div class="cost-label">ريال/شهر لزوجين</div>
+      <div class="rating"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></div>
+      <p style="color:var(--text-muted);font-size:0.85rem">حلال ★★★☆☆ | إنترنت ★★★★☆ | مجتمع ★★★☆☆</p>
+    </div>
+  </div>
+
+  <div class="story-card" style="margin-top:3rem;text-align:center">
+    <h4 style="color:var(--gold);font-size:1.3rem;margin-bottom:1rem">توصيتي لفراس ورهف</h4>
+    <p class="quote" style="font-size:1.1rem">ابدأوا بـ <strong style="color:var(--bali)">بالي</strong> — أكل حلال في كل مكان، مجتمع ضخم، وطبيعة خلابة. جرّبوا ٣ أشهر. بعدها انتقلوا لـ <strong style="color:var(--phuket)">بوكيت</strong> لتجربة مختلفة. وإذا حبيتوا أوروبا، <strong style="color:var(--lisbon)">لشبونة</strong> في الصيف لا تتفوّت. وإذا الميزانية محدودة، <strong style="color:var(--tbilisi)">تبليسي</strong> سنة كاملة بدون تأشيرة!</p>
+  </div>
+</section>
+
+<!-- ======================= DIGITAL NOMAD ======================= -->
+<section id="nomad" class="fade-in">
+  <div class="section-header">
+    <div class="section-divider"></div>
+    <h2>دليل البدو الرقميين</h2>
+    <p>كل ما تحتاجه للعمل عن بُعد وأنت تستمتع بالحياة</p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-number">1</div>
+    <div class="tip-content">
+      <h5>جهّز مصدر دخل عن بُعد قبل السفر</h5>
+      <p>سواء freelancing، عمل عن بُعد مع شركة سعودية، أو بزنس أونلاين. الأهم إن الدخل مستمر. منصات مثل Upwork، Toptal، أو العمل مع شركات سعودية عن بُعد. حتى لو راتبك ٥,٠٠٠ ريال — في بالي أو تبليسي هذا مبلغ ممتاز!</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-number">2</div>
+    <div class="tip-content">
+      <h5>التأمين الصحي الدولي — لا تتنازل عنه</h5>
+      <p>SafetyWing ($83/شهر ≈ ٣١٠ ريال) هو الخيار الأشهر بين البدو الرقميين. يغطي ١٨٥ دولة، طوارئ وتنويم. بديل أفضل: Cigna Global (~٧٥٠ ريال/شهر) لتغطية شاملة. لا تعتمد على تأمين صاحب العمل — أنت محتاج تأمين يمشي معك وين ما رحت.</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-number">3</div>
+    <div class="tip-content">
+      <h5>حساب بنكي دولي</h5>
+      <p>Wise (TransferWise سابقاً) — أفضل خيار. حساب متعدد العملات، بطاقة فيزا، تحويل بأرخص سعر صرف. افتح الحساب وأنت بالسعودية. بديل: Revolut. خلّ حسابك السعودي نشط للرواتب والتحويلات، واستخدم Wise للصرف اليومي.</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-number">4</div>
+    <div class="tip-content">
+      <h5>VPN — ضروري</h5>
+      <p>اشترك في NordVPN أو ExpressVPN ($5-10/شهر). تحتاجه لـ: الوصول لحساباتك البنكية السعودية، مشاهدة المحتوى السعودي/العربي، حماية بياناتك على شبكات الكافيهات العامة. خذ اشتراك سنوي — أرخص بكثير.</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-number">5</div>
+    <div class="tip-content">
+      <h5>شنطة البدو الرقمي</h5>
+      <p>شنطة ظهر واحدة (40-50 لتر) + شنطة لابتوب. لا تاخذ أكثر من اللي تقدر تشيله. أهم الأشياء: لابتوب خفيف (MacBook Air)، هيدفون noise-cancelling، محول كهرباء عالمي، هارد ديسك احتياطي، حبل إنترنت (USB-C to Ethernet) للطوارئ.</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-number">6</div>
+    <div class="tip-content">
+      <h5>ابدأ بـ ٣ أشهر — لا تلتزم طويل</h5>
+      <p>أول مرة؟ روح لمدينة واحدة لمدة ٣ أشهر. هذي المدة الكافية تتعرف على المكان وتقرر إذا يناسبك. لا توقّع عقد إيجار طويل أول مرة. استخدم Airbnb أول أسبوعين وبعدها دوّر إيجار شهري محلي (أرخص بكثير من Airbnb).</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-number">7</div>
+    <div class="tip-content">
+      <h5>حافظ على عاداتك ودينك</h5>
+      <p>في كل مدينة بالقائمة تلقون مساجد. تطبيق Muslim Pro يعطيك أوقات الصلاة ويدلك على أقرب مسجد. رمضان في بالي تجربة جميلة — إندونيسيا كلها تصوم! حافظوا على روتينكم واستمتعوا بالتجربة.</p>
+    </div>
+  </div>
+
+  <div class="story-card">
+    <p class="quote">«أهم نصيحة: لا تقارن حياتك الجديدة بحياة الانستقرام. أول شهر بيكون صعب — وحشة الأهل، ضغط التأقلم، لحظات شك. هذا طبيعي. بعد الشهر الثاني بتحس إنك ما تبي ترجع. الحرية لها ثمن بس تستاهل كل ريال.»</p>
+    <span class="author">— محمد، مبرمج سعودي، يتنقل بين ٤ مدن سنوياً منذ ٢٠٢٣</span>
+  </div>
+</section>
+
+<!-- ======================= CHECKLIST ======================= -->
+<section id="checklist" class="fade-in">
+  <div class="section-header">
+    <div class="section-divider"></div>
+    <h2>القائمة قبل السفر</h2>
+    <p>شيك ليست كاملة — طبّقها خطوة بخطوة</p>
+  </div>
+
+  <div class="checklist">
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>جدّد جواز السفر</strong><p>تأكد إن صلاحيته أكثر من ٦ أشهر</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>افتح حساب Wise</strong><p>بطاقة متعددة العملات + تحويل رخيص</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>اشترك بتأمين صحي دولي</strong><p>SafetyWing أو Cigna Global</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>جهّز مصدر دخل عن بُعد</strong><p>فريلانس، عمل عن بُعد، أو بزنس أونلاين</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>احجز طيران ذهاب فقط</strong><p>One-way أرخص ويعطيك مرونة</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>احجز سكن أول أسبوعين</strong><p>Airbnb أو Booking — بعدها دوّر محلي</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>اشترك بـ VPN</strong><p>NordVPN أو ExpressVPN</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>حمّل التطبيقات الأساسية</strong><p>Wise, Grab, Google Maps, Muslim Pro, HalalTrip</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>خذ نسخة من كل وثائقك</strong><p>جواز، هوية، تأمين — نسخة ورقية + إلكترونية</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>بلّغ البنك إنك مسافر</strong><p>عشان ما يوقفون بطاقتك</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>شيل عنوانك الوطني</strong><p>خلّ عنوان بالسعودية نشط للمراسلات</p></div>
+    </div>
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div><strong>ودّع الأهل وطمّنهم</strong><p>حدد مواعيد مكالمات أسبوعية ثابتة</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FINAL ======================= -->
+<section class="final-section fade-in">
+  <div class="heart">&#10084;</div>
+  <h2>فراس ورهف</h2>
+  <p>الحياة قصيرة جداً عشان تعيشها في مكان واحد بروتين واحد. العالم كبير وجميل ومليان تجارب تنتظركم. كل يوم تأجّلون فيه القرار هو يوم ضايع من أحلى أيام حياتكم.</p>
+  <p style="color:var(--gold);font-weight:700;font-size:1.3rem">القرار الأصعب هو الأول. بعدها كل شي يصير سهل.</p>
+  <p style="font-size:1rem;margin-top:2rem">هذا الدليل اتسوى بـ ♥ — فبراير ٢٠٢٦</p>
+</section>
+
+<footer>
+  <p>دليل الحياة في الخارج — فراس ورهف — ٢٠٢٦</p>
+  <p style="margin-top:0.5rem;font-size:0.75rem">جميع الأسعار تقريبية بالريال السعودي (١ دولار ≈ ٣.٧٥ ريال) وقابلة للتغيير حسب الموسم والموقع</p>
+</footer>
+
+<script>
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Navbar hide on scroll
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    nav.classList.add('hidden');
+  } else {
+    nav.classList.remove('hidden');
+  }
+  lastScroll = currentScroll;
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
